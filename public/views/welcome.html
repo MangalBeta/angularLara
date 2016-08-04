@@ -1,0 +1,91 @@
+ <div class="span8 mainContent">                
+<div class="sticky-posts-list">
+    <p><a href="#">Is this your first time here? Check this out before posting.</a></p>
+</div>
+
+<div class="widget">
+    <div class="widget-header">
+        <div class="pull-left dropdown">
+            <a href="#" data-toggle="dropdown" class="pull-left dropdown-toggle"><h3>All Questions <i class="icon-caret-down"></i></h3></a>
+           <!--  <ul class="dropdown-menu">
+            
+            <li><a href="#">Unanswered Questions</a></li>
+            <li><a href="#">Recommended Questions</a></li>
+            </ul> --> 
+        </div>
+<ul class="nav nav-pills sort">
+<li title="Relevant" class="disabled"><a href="#"><i class="icon-signal"></i></a></li>
+<li title="Updated"><a href=""  ng-click="sortByUpdated()"><i class="icon-edit"></i></a></li>
+<li class="active" title="Created"><a href="" ng-click="sortByNewlyCreated()"><i class="icon-time"></i></a></li>
+<li title="Hottest"><a href=""  ng-click="sortByMostView()"><i class="icon-fire"></i></a></li>
+<li title="Votes"><a href="" ng-click="sortByMaxVote()"><i class="icon-thumbs-up"></i></a></li>
+</ul>    </div> 
+    <div id="id_topic_content" class="widget-content"> 
+<div class="node-list-item question-list-item" ng-repeat="question in questions  | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+  
+    <!--<div class="gravatar-wrapper">
+<a href="/users/187020/nschreurs.html"
+style="display: inline-block; max-width: 32px;"
+rel="user" nodeId="187020"> <img class="gravatar "
+width="32"
+src="https://secure.gravatar.com/avatar/24e423c79518292b3738b0e4d168ff87?d=identicon&r=PG&amp;s=32" id="user-avatar-145097"
+alt="avatar image"
+title="NSchreurs"
+/>
+</a>    </div>-->
+    <div class="info">
+
+        <h4 class="title"><a href="" ng-click="singleQuestion(question.aks_id)">{{question.title}}</a></h4>
+        <p>
+<a nodeid="187020" rel="user" href="" ng-click ="userProfile(question.user_id)" data-hasqtip="0">{{question.name}}</a>                     <span class="karma"></span>
+            <span title="Jul 20, 2016 3:41:16 AM">{{question.created_at | date}}</span>
+        </p>
+ <p class="last-active-user muted">
+
+
+            <span class="tags">
+
+     <a ng-repeat="model in question.topic.split(',')" nodeid="3820" rel="topic" class="tag" href="#" data-hasqtip="35">
+            {{model}} </a>
+         </span>
+        </p>
+    </div>
+
+    <div class="counts">
+
+        <div class="votes">
+            <div class="item-count">{{question.likes}}</div>
+            <div>Likes</div>
+        </div>
+            <div class="status  ">
+                <div class="item-count">{{question.total_answers}}</div>
+                <div>Answers</div>
+            </div>
+
+        <div class="views">
+            <div class="item-count">{{question.view}}</div>
+            <div>Views</div>
+        </div>
+    </div>
+    <div class="hidden" id="post-145097-users-liked">
+    </div>
+    
+</div>
+</div>
+
+   </div>
+   <div >
+<pagination page="currentPage" max-size="noOfpages" total-items="totalItems" items-per-page="entryLimit"></pagination>
+ </div>
+
+
+
+</div>
+
+<!-- pagination widget  --> 
+
+   <!-- sidewar widget  --> 
+   <div ng-include="'views/sidebar.html'"></div>          
+ 
+   <!-- sidewar widget  end-->   
+ 

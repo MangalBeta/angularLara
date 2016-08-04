@@ -1,0 +1,26 @@
+<div class="span3 sidebarTwo" ng-controller="questionController">
+<h3>Search</h3>
+<div>
+<!-- <form name="search" >
+    <input name="_token" type="hidden" value="mOaBxU1sVUsRX1KkuAeVhSDSxj0LKT8DDxl9USQc">
+ <input type="text" placeholder="Find posts, topics..." id="search-query" name="searchInputText" ng-model="title.searchInputText" value=""  class="search-query sidebar-search-query ui-autocomplete-input" on-keyup="searchFromDB()"/ >
+ <a class="" href="" onClick="myserach.getMatchData(this)"><i class="icon-search"></i></a>
+
+
+
+
+</form> -->
+<form class="navbar-search"  name="search">
+  <input name="_token" type="hidden" value="mOaBxU1sVUsRX1KkuAeVhSDSxj0LKT8DDxl9USQc">
+    <input type="text" placeholder="Find posts, topics, and id..." autocomplete="off" data-items="4" data-provide="typeahead" id="search-query" name="searchInputText" ng-model="selectsearch.title" value="{{selectsearch.title}}"  class="search-query sidebar-search-query ui-autocomplete-input" on-keyup="searchFromDB()">
+    <a class="search-button no-style-link" href="" ng-click="matchSearch()"><i class="icon-search"></i></a>
+
+</form>
+<div ng-show="selectsearch.title">
+ <select size=10;   style="width:100%;" ng-model="selectsearch" ng-options="x.title for x in searchMeta track by x.id">
+</div>
+</select>
+</div>
+
+ </div>
+  

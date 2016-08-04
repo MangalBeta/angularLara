@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="center-form panel">
+      <div class="panel-body">
+
+      <form  id="login-form" name="myForm" novalidate>
+      	<fieldset>
+      		<legend>
+      			Login
+      		</legend>
+
+      		<label>
+      			<span>Username *</span>
+      			<input  required=""  ng-model="email" name="email" placeholder="Enter your email as your username " required type="email">
+      		</label>
+<p ng-show=" myForm.email.$dirty && myForm.email.$invalid">email address novalid</p>
+      		<label>
+      			<span>Password *</span>
+      			<input ng-maxlength =20 ng-minlength=6 name="password" ng-model="pass" placeholder="Enter your password"  type="password" required>
+		<p ng-show="myForm.password.$dirty && (myForm.password.$error.maxlength || myForm.password.$error.minlength) ">Passwords must be between 8 and 20 characters.</p>
+   <p ng-show="myForm.password.$dirty  && myForm.password.$invalid">password not novalid</p>
+      		</label>
+
+   <button  class="main-button login" ng-disabled="myForm.$invalid" ng-click ="userLogin()">Login</button>
+ <a  class="main-button login" href="#/signup"> SignUp </a>
+
+      	</fieldset>
+      </form>
+      </div>
+
+</div>
+</div>

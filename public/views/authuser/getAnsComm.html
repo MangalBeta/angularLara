@@ -1,0 +1,72 @@
+<div nodeid="146050" id="comments-container-146050" class="comments-container" style="display: block;" ng-controller="questionController" ng-init='getAllAnsComment(answer.ans_id)'>
+
+<div authorid="187405" nodeid="146068" activerev="331885" id="comment-146068" class="comment nsc even" style="" ng-repeat="comment in getAnsComment"> 
+<p style="display: none;">{{$index}}</p>
+    <div nodeid="146068" class="comment-content" >
+     <div class="comment-header">  
+      <a href="/users/187405/sdfdsfsdffggggh.html" rel="user" nodeid="187405" class="comment-user-gravatar" data-hasqtip="8">
+        <img style="width:36;" src="https://secure.gravatar.com/avatar/892641451212ad2424916202efcc74a8?d=identicon&amp;r=PG" class="gravatar">
+    </a>
+
+    <a href="" ng-click="userProfile(comment.user_id)"  rel="user" nodeid="187405" class="comment-user userinfo" data-hasqtip="9">{{comment.name}}</a>  
+    <span title="" class="comment-age friendly-date">    
+        · ({{comment.created_at | date}})   
+    </span>
+    <div id="comment-146068-info" class="comment-info btn-broup">  
+    <span class="comment-score" id="post-146068-score">{{comment.likes}}</span> 
+    <a title="Click to up vote" class="make-tooltip" href="" ng-click="likeAnsComment(comment.comans_id)" command="voteUp" id="vote-up-button-146068">Like</a> 
+    <a title="Click to down vote" class="make-tooltip" href=""  ng-click="dislikeAnsComment(comment.comans_id)" command="voteDown" id="vote-down-button-146068"><i class=" icon-chevron-down"></i>
+    </a>
+     <a ng-if="isUserLoggedIn()" class="comment-reply" href="" ng-click="replyAnsComm(comment.comans_id); replyCommentAnsBox($index)" id="comment-reply"><i class="icon-reply"></i> Reply
+     </a> 
+    <!-- <a command="share" class="ajax-command" href="#" title="Share a link to this answer">Share
+    </a> -->           
+    <div style="display:inline" class="dropdown" ng-if="isUserLoggedIn() && getUserInfo() == comment.user_id">
+    <a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class=" icon-cog"></i> More...
+    </a>  
+
+    <ul aria-labelledby="dLabel" role="menu" class="dropdown-menu">
+<!--     <li>
+       <a command="reportPost" href="#" class="ajax-coxmmand " rel="nofollow" title="Report as offensive (i.e containing spam, advertising, malicious text, etc.)">Report</a>
+    </li> -->                                                    
+ <!--    <li class="item">                       
+      <a href="/revisions/146068.html" class="node-tools-revisions-link" rel="nofollow">See revisions</a>                    
+  </li>  -->                                                       
+    <li>
+        <a class="comment-edit" href="" ng-click="editAnsComm(comment.comans_id); showEditAnsCommentBox($index)" id="comment-146068-edit">Edit</a> 
+    </li>                                                       
+    <li >
+    <a command="deleteComment" class="comment-delete" href="" ng-click="deleteAnsComm(comment.comans_id)" id="comment-146068-delete">Delete </a>                     
+    </li>                                                       
+  <!--   <li>
+    <a command="convertToAnswer" class="convert-to-answer" href="#">Convert to answer</a>     
+   </li> --> 
+          </ul>         
+     </div>            
+   </div>
+  </div> 
+
+     <div class="comment-left" id="comment-146068-left"> 
+        <div class="comment-score" id="post-146068-score">
+        </div>     
+    </div>     
+    <div class="comment-text">
+        <p>{{comment.answer_comment}} </p>
+       </div> 
+
+
+       <div ng-show="clickAnsReply" ng-if="$index == replyAnsindex">
+        <div ng-include="'views/authuser/repAnsComment.html'"></div> 
+      </div>
+
+    <div ng-show="clickAnsEdit" ng-if="$index == editAnsindex">
+       <div ng-include="'views/authuser/editAnsComment.html'"></div> 
+       </div>
+     </div>
+<div ng-include="'views/authuser/getRepAnsComm.html'"></div>  
+</div>
+
+</div>
+
+
+

@@ -1,0 +1,71 @@
+<!-- 
+
+<div id="logout" ng-show="logOut"> 
+
+<p>{{data}} is active</p>
+
+ <p class="main-button logout" ng-click="logOutUser()"> Logout </p>
+   </div>
+
+<div class="main-view-content  ">
+<div class="employees active"  >
+          <div class="employees-overview active" ng-hide="clickCreateUser" >
+              <ul id="sub-nav" >
+                  <li >
+                      <a name="bAdd" ng-click="clickCreateUser=true" class="subButton" id="bAdd" href="">
+                        Create
+                      </a>
+                     
+                  </li>
+              </ul>
+              <div  id="employee-list-container" >
+              <table >
+              <tr > <th>Sr.No</th><th> Name</th><th>Email</th> <th>Edit</th><th>Delete</th></tr>
+               <tr  id="employee-list" ng-repeat="x in contacts">
+                    <td>{{$index}}</td>
+                  <td>{{x.name}}</td>
+                   <td> {{x.lastName}}</td>
+        <td><a name="bEdit" id="bEdit" href="javascript:void(0)"  class="childbtn" ng-click="edit(x.id)"> Edit </a> </td>
+        <td><a name="bDelete"  id="bDelete" href="javascript:void(0)"class="childbtn"  ng-click="deletName(x.id)">Delete</a></td>
+                  </tr>
+                  </table>
+              </div>
+          </div>
+    </div>
+   <div class="employee-edit"  ng-show="clickCreateUser" >
+         <form >
+        
+                <label>
+                  <span>First name:</span>
+                  <input type="text" ng-model="newContact.name">
+                </label>
+                <label>
+                  <span>Last name:</span>
+             <input type="text" ng-model="newContact.lastName">
+                </label>
+
+                <label>
+                    <span>e-Mail: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <input type="email" ng-model="newContact.email">
+                </label>
+                 <input type="hidden" ng-model="newcontact.id" />
+                <label>
+                  <span>Start date:</span>
+                 <input type="text" ng-model="newContact.startDate" value="{{newContact.startDate}}">
+                </label>
+
+                <div class="formFooter">
+                  <button class="main-button" style=" margin-left: 159px" ng-click ="addUser();">
+                      Save
+                  </button>
+                  <button  class="bDelete main-button" ng-click="clickCreateUser = false">
+                      Cancel
+                   </button>
+                </div>
+            </form>
+       </div>
+
+
+             
+</div>
+ -->

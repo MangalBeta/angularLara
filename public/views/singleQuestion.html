@@ -1,0 +1,81 @@
+ <div class="span8 mainContent">
+<div xmlns="http://www.w3.org/1999/html" class="widget widget-nopad smallmargin" >
+    <div class="widget-content">
+        <div nodeid="145267" class="post-container question-container" id="question-container-145267">
+            <div class="question post" id="question-145267">
+           
+
+<style type="text/css">
+    .question-body, .node-body { 
+
+        min-height: 50px;
+    }
+
+    .answer-body, .reply-body {
+        min-height: 115px;
+    } 
+</style>
+<div id="resltmeta">
+<div nodeid="145267" class="post-gravatar question-gravatar">
+        <div class="vote-widget">
+            <a command="voteUp" href="" ng-click="upVote(singles.id)" class="vote-up votes" id="vote-up-button-145267" title="Click to up vote"><i class="icon-circle-arrow-up icon"></i></a>
+            <span style="cursor:default" class="post-score-wrapper count votes" id="post-145267-score-wrapper">
+                <span class="score" id="post-145267-score">{{singles.likes}}</span>
+            </span>
+            <a command="voteDown" href=""  ng-click="downVote(singles.id)" class="vote-down votes" id="vote-down-button-145267" title="Click to down vote"><i class="icon-circle-arrow-down icon"></i></a>
+
+           <!--  <a command="markFavorite" href="#" class="ajax-command action-favorite ajax-command favorite-mark " id="favorite-mark-145267" title="Mark this question as favorite">
+                <i class="icon-star-empty icon"></i>
+            </a> -->
+        </div>
+</div>
+<h1 class="question-title">{{singles.title}}</h1>
+               <div class="question-body">
+                <p>{{singles.description}} </p>
+                </div>
+                <div class="muted author-info">
+                <strong>Question</strong> by <a nodeid="79639" rel="user" href="" ng-click="userProfile()" data-hasqtip="0">{{singles.name}}</a>                
+               {{singles.created_at | date}}
+                 <span id="id_tags_container" class="tags">
+               <!--     <a ng-repeat="model in singles.topic.split(',')" nodeid="3820" rel="topic" class="tag" href="#" data-hasqtip="35">
+            {{model}} </a> -->
+<a nodeid="2184" rel="topic" class="tag" ng-repeat="model in singles.topic.split(',')" href="#" data-hasqtip="7">{{model}}</a>
+                </span>
+                </div>
+</div>
+
+   <!-- div class="comment-tools hidden"><span class="add-comment-link "><a href="#">Comment</a></span></div> -->
+
+<div nodeid="145267" class="control-bar" ng-init='getAllQuesComment(singles.id)'>
+    <div nodeid="145267" class="post-controls">
+            <a href="" ng-click="showCommentBox(singles.id)" class="comment_button">Add comment</a>
+    </div>
+       <div nodeid="145267" class="post-controls">
+         
+            <a commentcount="{{getComment.length}}" class="show-comments-container" ng-click="toggleCustom()" id="146077-show-comments-container">· <i class="icon-comments"></i>{{showText}} {{getComment.length}}</a>
+    </div>
+
+
+</div>
+
+ <div id="comments-container" class="comments" ng-show="showBox">
+  <div  ng-include="'views/authuser/commentBox.html'"></div>  
+                </div>
+ <div nodeid="145f267" ng-hide="showMore">
+   <div  ng-include ="'views/authuser/showallcomment.html'"></div>  
+</div>
+
+
+  <div ng-include="'views/authuser/answerComment.html'"></div> 
+
+
+
+  <div ng-include ="'views/authuser/showAnswer.html'"></div> 
+  <div ng-include="'views/authuser/yourAnswer.html'"></div> 
+            </div>
+        </div>
+
+    </div>
+</div>
+ </div>
+<!--  <div ng-include="'views/sidebar.html'"></div>    -->     

@@ -1,0 +1,80 @@
+<div ng-controller="questionController" ng-init='getAllReplyComment(comment.que_id)'>
+
+<div authorid="187493" nodeid="146323" activerev="332311" id="comment-146323" class="comment nsc"  ng-repeat="repComm in replyComment"> 
+ 	<div nodeid="146323" class="comment-content"  >
+ <div class="comment-header" >  
+ 	   <a href="/users/187493/tyutu.html" rel="user" nodeid="187493" class="comment-user-gravatar" data-hasqtip="14">
+ 	<img style="width:36;" src="https://secure.gravatar.com/avatar/9fb750c3eefc95bce7dd8cbf06786eef?d=identicon&amp;r=PG" class="gravatar">
+ 	  </a>     
+ 	 <a href=""  ng-click="userProfile(repComm.user_id)" rel="user" nodeid="187493" class="comment-user userinfo" data-hasqtip="15">{{repComm.name}}
+ 	   </a>     
+ 	<span class="comment-parent">
+ 	   	<i class="icon-share-alt"></i> </span>   
+   <span title="" class="comment-age friendly-date">· ({{repComm.created_at}})         
+ 	                   </span>
+  <div id="comment-146323-info" class="comment-info btn-broup">  
+   <span class="comment-score" id="post-146323-score">{{repComm.likes}}</span>   
+   <a title="Click to up vote" class="make-tooltip" href="" ng-click="likeReplyComment(repComm.replyque_id)" command="voteUp" id="vote-up-button-146323">
+   	Like
+   </a>         
+   <a title="Click to down vote" class="make-tooltip" href=""  ng-click="dislikeReplyComment(repComm.replyque_id)" command="voteDown" id="vote-down-button-146323">
+   	<i class=" icon-chevron-down">
+   	</i>
+   </a> 
+
+   <a ng-if="isUserLoggedIn()" class="comment-reply" href="" ng-click="replyQueComm(repComm.replyque_id); replyCommentBox($index)" id="comment-146323-reply">
+   	<i class="icon-reply"></i> Reply</a>                   
+                     
+   	<div style="display:inline" class="dropdown" ng-if="isUserLoggedIn() &&  getUserInfo() == repComm.user_id">            
+   	 <a href="#" data-toggle="dropdown" class="dropdown-toggle">                 
+   	 <i class=" icon-cog"></i> More...</a>             
+   	 <ul aria-labelledby="dLabel" role="menu" class="dropdown-menu">
+      <li >
+       	<a class="comment-edit" href="" ng-click="editReplyComm(repComm.replyque_id); showEditReplyCommentBox($index)" id="comment-146323-edit">Edit</a>   
+         </li>                                                       
+         <li >
+         	<a command="deleteComment" class="comment-delete" href="" ng-click="removeReplyComm(repComm.replyque_id)"  id="comment-146323-delete">Delete 
+         </a>                    
+          </li>
+      </ul>         
+       </div>    
+         </div> 
+     </div> 
+
+       <div class="comment-left" id="comment-146323-left">         
+       	<div class="comment-score" id="post-146323-score"></div>
+       </div>      
+     <div class="comment-text">
+
+     	<p>{{repComm.reply_comment}} </p>
+
+     </div>
+<div ng-show="clickReply" ng-if="$index == replyindex">
+  <div ng-include="'views/authuser/repComment.html'"></div> 
+ </div>
+    <div ng-show="clickReplyEdit" ng-if="$index == editReplyindex">
+      
+       <div class="c" id="comment-form-container" ng-controller="questionController">
+   <div class="comment-form" id="comment-form">
+     <form  id="fmask" name="edit">
+        <div class="comment-form-widgets-container" >
+            <textarea style="height:100px; width:100%" ng-model="repComm.reply_comment" value="{{repComm.reply_comment}}"></textarea><br />
+            <div class="comment-form-buttons">
+                <div class="comment-form-buttons-container">
+    <input type="submit" value="Submit" class="btn btn-primary comment-submit" ng-click="editReplySaveComm(repComm.replyque_id)">
+            <input type="submit" ng-click="cancelReplyEditComm()" value="Cancel" class="btn comment-cancel">
+                </div>
+                
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </form>
+</div>
+  
+  <!--      <div ng-include="'views/authuser/editreplyComment.html'"></div>  -->
+       </div>
+
+      </div>
+
+      </div>
+  </div>

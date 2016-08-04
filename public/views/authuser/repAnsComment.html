@@ -1,0 +1,22 @@
+<div class="c" id="comment-form-container">
+   <div class="comment-form" id="comment-form" name="comment" >
+     <form  id="fmask" name="replyans">
+
+        <div class="comment-form-widgets-container" >
+      
+      <input type="hidden" name="answer_id" ng-model="answer.ans_id" value="{{answer.ans_id}}">
+
+            <textarea style="height:100px; width:100%" name="replyanscomment"  ng-model="answer.replyanscomment"></textarea><br />
+            <div class="comment-form-buttons">
+                <div class="comment-form-buttons-container">
+             <input type="submit" value="Submit" class="btn btn-primary comment-submit"  ng-click="savereplyAnsComm(comment.comans_id)">
+            <input type="submit" ng-click="cancelReplyComm()" value="Cancel" class="btn comment-cancel">
+                </div>
+                
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </form>
+</div>
+  
+</div>

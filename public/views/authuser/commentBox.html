@@ -1,0 +1,20 @@
+
+<div class="clearfix well comment-form-container" id="comment-145275-form-container" ng-controller="questionController" style="display: block;">
+    <form  id="fmask" name="question">
+        <div class="comment-form-widgets-container">
+        <div  ng-repeat="singles in singleQues">
+           <input type="hidden" name="post_id" ng-model="singles.id" value="{{singles.id}}">
+         </div>
+            <textarea style="height:150px; width:100%" ng-model="question.comment"></textarea><br />
+            <div class="comment-form-buttons">
+                <div class="comment-form-buttons-container">
+                    <input type="submit" value="Submit" class="btn btn-primary comment-submit"  ng-click="postQuestionComment()">
+                    <input type="submit" ng-click="cancelCommentBox()" value="Cancel" class="btn comment-cancel">
+                </div>
+                
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </form>
+</div>
+

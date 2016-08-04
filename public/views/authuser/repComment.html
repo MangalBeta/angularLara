@@ -1,0 +1,25 @@
+
+<div class="c" id="comment-form-container" ng-controller="questionController" ng-init='getAllQuesComment(singles.id)' >
+   <div class="comment-form" id="comment-form" name="comment" >
+     <form  id="fmask" name="edit">
+
+        <div class="comment-form-widgets-container" >
+        <div ng-repeat="comment in getComment">
+      <input type="hidden" name="comment_id" ng-model="comment.que_id" value="{{comment.que_id}}">
+</div>
+            <textarea style="height:100px; width:100%" ng-model="replycomment"></textarea><br />
+            <div class="comment-form-buttons">
+                <div class="comment-form-buttons-container">
+             <input type="submit" value="Submit" class="btn btn-primary comment-submit"  ng-click="savereplyQueComm(singles.id)">
+            <input type="submit" ng-click="cancelReplyComm()" value="Cancel" class="btn comment-cancel">
+                </div>
+                
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </form>
+</div>
+  
+</div>
+
+

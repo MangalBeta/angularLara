@@ -1,0 +1,30 @@
+
+<div class="widget widget-nopad answer-list" ng-controller="questionController" ng-init='getAllAnswer(singles.id)'>
+    <div class="widget-header">
+      
+        <h3><strong>{{getAnswer.length}}</strong> Replies</h3> 
+     <a ng-if="isUserLoggedIn()" href="answer-form" >Add your reply</a>
+        <ul class="nav nav-pills sort">
+            <li class="sort-label">Sort:&nbsp;</li>
+            <li class="active" title="Votes">
+                <a href="" ng-click="sortByMaxVoteForAns()" >
+                    <i class="icon-thumbs-up"></i>
+                </a>
+            </li>
+            <li title="Created">
+                <a href="" ng-click="sortByNewlyAnswer()"><i class="icon-time"></i>
+            </a>
+        </li>
+            <li title="Oldest">
+                <a href="" ng-click="sortByOldestAns()">
+                    <i class="icon-history"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+<div class="widget-content">
+</div>
+
+</div> 
+<script type="text/javascript">
+</script>

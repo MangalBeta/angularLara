@@ -1,0 +1,40 @@
+<div class="widget answer-form-widget" ng-controller="questionController">
+  <div ng-if="isUserLoggedIn()" >
+    <div class="widget-header" >
+        <i class="icon-pencil"></i>
+        <h3>Your answer</h3>
+    </div>
+    <div class="widget-content">
+        <div class="row-fluid">
+            <div class="span1 hidden-phone">
+              <img width="44" title="ffffffff" alt="avatar image" id="" src="https://secure.gravatar.com/avatar/ae2176bc2b7131cf6f7c0414087f6e3f?d=identicon&amp;r=PG&amp;s=44" class="gravatar ">
+            </div>
+            <div class="span11">
+        <form  name="answer" >
+          <div  ng-repeat="singles in singleQues">
+           <input type="hidden" name="post_id" ng-model="singles.id" value="{{singles.id}}">
+         </div>
+                <div class="control-group">
+                    <br>
+
+                    <div class="controls" title="" id="answer-form">
+                   
+                    <textarea placeholder="Fill in the details..." rows="10" ng-model="singles.dd" name="body" id="body" data-type="question" class="redactor" style="border: 1px solid rgb(204, 204, 204);"></textarea>
+                   <!-- <div id="wmd-button-bar" class="wmd-panel wmd-button-bar">
+                  <trix-editor angular-trix ng-model="description" rows="10" name="description" class="redactor" id="body" placeholder="Fill in the details..." style="height:250px"></trix-editor>
+                </div> -->
+                  </div>
+
+                </div>
+       
+       <div class="form-actions">
+            <input type="submit" value="Post Your Question" class="btn btn-primary pull-right submit" name="ask" id="submit-question" ng-click="postAnswer()">
+           <input type="button" value="Cancel" onclick="window.location='#/'; return false;" class="btn submit cancel pull-right">
+             </div>
+          </form>
+            </div>
+        </div>
+         </div>
+    </div>
+  </div>
+</div>
